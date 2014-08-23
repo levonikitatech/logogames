@@ -342,6 +342,8 @@ GameObject:
   - 114: {fileID: 587778648}
   - 82: {fileID: 587778654}
   - 114: {fileID: 587778655}
+  - 114: {fileID: 587778657}
+  - 114: {fileID: 587778656}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -496,7 +498,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 587778647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4321204070283a3479b1c348f46f01c5, type: 3}
   m_Name: 
@@ -506,6 +508,30 @@ MonoBehaviour:
   sourceVolume: 100
   GuiSelectDevice: 1
   micControl: 2
+--- !u!114 &587778656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587778647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a866cdb07d8ec5349a05143c630a2d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &587778657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587778647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35596376b777cd41a5975c4af11fcc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LastRecorded: {fileID: 0}
+  maxRecordTime: 10
 --- !u!1 &667277441
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,11 +582,11 @@ MonoBehaviour:
     e00: 160
     e01: 0
     e02: 0
-    e03: -.903954744
+    e03: .909090877
     e10: 0
     e11: 160
     e12: 0
-    e13: .903954804
+    e13: 0
     e20: 0
     e21: 0
     e22: 160
@@ -707,7 +733,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1781432425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .903954744, y: -.903954804, z: 0}
+  m_LocalPosition: {x: -.909090877, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 667277442}
@@ -801,7 +827,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2048674101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2500265c5f1e9a545a9c15dc1942a7d2, type: 3}
   m_Name: 

@@ -1,0 +1,23 @@
+# Exported from Fuse 1.1.0
+
+newmtl fuse_material
+illum 4
+Kd 0.90 0.77 0.64
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+map_Ka fuse_material.png
+map_Kd fuse_material.png
+
+newmtl BodyParts
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 1.00 1.00 1.00
+map_Kd Head_ee_BodyParts_diffuse.png
+map_Ks Head_ee_BodyParts_specular.png
+bump Head_ee_BodyParts_normal.png
+map_Ns Head_ee_BodyParts_gloss.png
+
