@@ -15,12 +15,19 @@ public class SpectrumMicrophone : MonoBehaviour
     /// </summary>
     public int CaptureTime = 1;
 
+	public int hiPassFilter = 300;
+	public int loPassFilter = 3400;
+
+	private SEF_highpass highpass;
+	private SEF_lowpass lowpass;
     /// <summary>
     /// Make sure sample rate is base two
     /// </summary>
     public int SampleRate = 8192;
 
-    /// <summary>
+	private float gateThreshold = 0.2f;
+	private bool gateOn = false;
+	/// <summary>
     /// Make sure InitData is called if sample rate or capture time is changed
     /// </summary>
     float[] m_fetchData = null;
@@ -40,7 +47,9 @@ public class SpectrumMicrophone : MonoBehaviour
         m_complex = new float[size];
         m_spectrumReal = new float[halfSize];
         m_spectrumImag = new float[halfSize];
-    }
+		highpass = GetComponent<SEF_highpass>();
+		lowpass = GetComponent<SEF_lowpass>();
+	}
 
     /// <summary>
     /// The selected microphone
@@ -97,6 +106,8 @@ public class SpectrumMicrophone : MonoBehaviour
 
     public float[] GetData(int sampleOffset)
     {
+		float maxAmplitude;
+		float[] SpectrumReal, SpectrumImag;
         if (null == audio.clip)
         {
             return m_fetchData;
@@ -110,7 +121,28 @@ public class SpectrumMicrophone : MonoBehaviour
             if (hasChanged)
             {
                 audio.clip.GetData(m_fetchData, sampleOffset);
-            }
+				if (highpass)
+				{
+					highpass.ApplyFilter(m_fetchData);
+				}
+				if (lowpass)
+				{
+					lowpass.ApplyFilter(m_fetchData);
+				}
+				if (gateOn)
+				{
+					GetSpectrumData(FFTWindow.Rectangular, out SpectrumReal, out SpectrumImag);
+					maxAmplitude = -10f;
+					for (int i=0; i<SpectrumReal.Length; i++)
+						maxAmplitude = Mathf.Abs(SpectrumReal[i]) > maxAmplitude ? Mathf.Abs(SpectrumReal[i]) : maxAmplitude;
+					Debug.Log(maxAmplitude);
+					if (maxAmplitude <= gateThreshold)
+					{
+						for (int i=0; i<m_fetchData.Length; i++)
+							m_fetchData[i] = 0;
+					}
+				}
+			}
         }
         return m_fetchData;
     }
