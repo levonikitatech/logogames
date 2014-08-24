@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class GameScriptController : MonoBehaviour {
 
@@ -19,12 +20,23 @@ public class GameScriptController : MonoBehaviour {
 	public CreatureStateEnum CreatureState;
 	public int CreatureHealth;
 
+	public UIPanel panel;
+
+	public bool stepIsConfirmed = false;
 
 	public float delayActions;
 	public Action actionToDoAfterDelay;
 
+	public Dictionary<CreatureStateEnum, string> messages;
+
 	// Use this for initialization
 	void Start () {
+
+		messages = new Dictionary<CreatureStateEnum, string> {
+			{ CreatureStateEnum.appear, "Привет!\nДавай поиграем." },
+			{ CreatureStateEnum.hello, "Сегодня у нас звук \"Р\"!" },
+		};
+
 
 		if (Creatures == null) Creatures = new GameObject[0];
 		CurrentCreature = 0;
@@ -42,6 +54,10 @@ public class GameScriptController : MonoBehaviour {
 			delayActions -= Time.deltaTime;
 			return;
 		}
+
+		//if (messages.ContainsKey (CreatureState) && !stepIsConfirmed) return;
+		//stepIsConfirmed = false;
+
 		if(actionToDoAfterDelay != null) actionToDoAfterDelay();
 
 		var creature = Creatures [CurrentCreature];
