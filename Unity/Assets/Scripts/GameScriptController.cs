@@ -100,7 +100,6 @@ public class GameScriptController : MonoBehaviour {
 		default:
 			break;
 		}
-
 	}
 
 	public void Delay(float secs, Action action)
