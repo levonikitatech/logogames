@@ -25,8 +25,8 @@ public class SpectrumMicrophone : MonoBehaviour
     /// </summary>
     public int SampleRate = 8192;
 
-	private float gateThreshold = 0.2f;
-	private bool gateOn = false;
+	private float gateThreshold = 1f;
+	private bool gateOn = true;
 	/// <summary>
     /// Make sure InitData is called if sample rate or capture time is changed
     /// </summary>
