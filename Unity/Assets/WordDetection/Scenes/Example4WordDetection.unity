@@ -1,16 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
-Scene:
+SceneSettings:
   m_ObjectHideFlags: 0
   m_PVSData: 
-  m_QueryMode: 1
   m_PVSObjectsArray: []
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
-    viewCellSize: 1
-    bakeMode: 2
-    memoryUsage: 10485760
+    smallestOccluder: 5
+    smallestHole: .25
+    backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
@@ -23,11 +22,12 @@ RenderSettings:
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 0}
   m_ObjectHideFlags: 0
 --- !u!127 &3
-GameManager:
+LevelGameManager:
   m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
@@ -79,7 +79,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 32635154}
   - 33: {fileID: 32635156}
@@ -103,6 +103,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1579102205}
+  m_RootOrder: 0
 --- !u!23 &32635155
 Renderer:
   m_ObjectHideFlags: 0
@@ -121,6 +122,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &32635156
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -146,7 +149,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 72993429}
   - 33: {fileID: 72993431}
@@ -170,6 +173,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1579102205}
+  m_RootOrder: 2
 --- !u!23 &72993430
 Renderer:
   m_ObjectHideFlags: 0
@@ -188,6 +192,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &72993431
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -213,7 +219,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 233540310}
   - 114: {fileID: 233540311}
@@ -236,6 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!114 &233540311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,11 +251,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 233540309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1c223447a011244eaf86927ed33051e, type: 1}
+  m_Script: {fileID: 11500000, guid: b1c223447a011244eaf86927ed33051e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Mic: {fileID: 1748221583}
   AudioWordDetection: {fileID: 1064097246}
   RefExample: {fileID: 1719987181}
+  NormalizeWave: 0
+  RemoveSpectrumNoise: 0
 --- !u!82 &233540312
 AudioSource:
   m_ObjectHideFlags: 0
@@ -270,6 +280,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -310,7 +322,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 648648918}
   - 20: {fileID: 648648919}
@@ -335,6 +347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!20 &648648919
 Camera:
   m_ObjectHideFlags: 0
@@ -362,7 +375,11 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
   m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!81 &648648920
 AudioListener:
   m_ObjectHideFlags: 0
@@ -389,7 +406,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 742621381}
   - 33: {fileID: 742621383}
@@ -413,6 +430,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1579102205}
+  m_RootOrder: 1
 --- !u!23 &742621382
 Renderer:
   m_ObjectHideFlags: 0
@@ -431,6 +449,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &742621383
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -456,7 +476,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 1064097245}
   - 114: {fileID: 1064097246}
@@ -478,6 +498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!114 &1064097246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,17 +507,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1064097244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b38ccdd865fbd4da1af7435b22c8f8, type: 1}
+  m_Script: {fileID: 11500000, guid: 31b38ccdd865fbd4da1af7435b22c8f8, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Mic: {fileID: 1748221583}
+  WordsToIgnore: []
   ClosestIndex: 0
   Threshold: 60
+  NormalizeWave: 0
+  UsePushToTalk: 0
 --- !u!1 &1579102204
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 1579102205}
   m_Layer: 0
@@ -520,12 +545,13 @@ Transform:
   - {fileID: 742621381}
   - {fileID: 72993429}
   m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1719987178
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 1719987179}
   - 114: {fileID: 1719987181}
@@ -547,6 +573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!114 &1719987181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,9 +582,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719987178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87782306fd07ba74bba377434de1491e, type: 1}
+  m_Script: {fileID: 11500000, guid: 87782306fd07ba74bba377434de1491e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Mic: {fileID: 1748221583}
+  ShowUsePlotter: 1
   MaterialSpectrumLeft: {fileID: 2100000, guid: 7f88733f11939b345ba33c14d9f4fdb7,
     type: 2}
   MaterialSpectrumRight: {fileID: 2100000, guid: 9f7f821886df20245917b255234e894f,
@@ -569,13 +598,15 @@ MonoBehaviour:
   TextureSize: 128
   Window: 0
   NormalizeGraph: 1
+  OverrideSpectrumImag: 0
   SpectrumImag: []
+  UsePlotter: 1
 --- !u!1 &1748221580
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 1748221581}
   - 82: {fileID: 1748221582}
@@ -598,6 +629,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!82 &1748221582
 AudioSource:
   m_ObjectHideFlags: 0
@@ -619,6 +651,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -662,8 +696,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1748221580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd37412b7ea132444a0c8d4cacaf9bd9, type: 1}
+  m_Script: {fileID: 11500000, guid: cd37412b7ea132444a0c8d4cacaf9bd9, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   CaptureTime: 1
+  hiPassFilter: 300
+  loPassFilter: 3400
   SampleRate: 8192
+  gateThreshold: 1
+  gateOn: 1
   DeviceName: 

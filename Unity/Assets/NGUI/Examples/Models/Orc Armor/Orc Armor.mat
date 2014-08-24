@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Orc Armor
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: ed64773f587bb9846918065b72c58283, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -29,16 +29,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MaskTex
+          name: _Cube
         second:
-          m_Texture: {fileID: 2800000, guid: 8307261b94c5d8a4f99775a836199d20, type: 3}
+          m_Texture: {fileID: 8900000, guid: a36411717c9a714488b09cbc9d90d6f2, type: 2}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Cube
+          name: _MaskTex
         second:
-          m_Texture: {fileID: 8900000, guid: a36411717c9a714488b09cbc9d90d6f2, type: 2}
+          m_Texture: {fileID: 2800000, guid: 8307261b94c5d8a4f99775a836199d20, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:

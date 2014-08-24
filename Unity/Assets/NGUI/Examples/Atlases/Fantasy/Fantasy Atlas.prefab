@@ -50,14 +50,14 @@ MonoBehaviour:
   - name: Orc Armor - Shoulders
     outer:
       serializedVersion: 2
-      x: 771
-      y: 896
+      x: 0
+      y: 212
       width: 128
       height: 128
     inner:
       serializedVersion: 2
-      x: 771
-      y: 896
+      x: 0
+      y: 212
       width: 128
       height: 128
     rotated: 0
@@ -68,14 +68,14 @@ MonoBehaviour:
   - name: Orc Armor - Bracers
     outer:
       serializedVersion: 2
-      x: 900
-      y: 911
+      x: 130
+      y: 208
       width: 123
       height: 113
     inner:
       serializedVersion: 2
-      x: 900
-      y: 911
+      x: 130
+      y: 208
       width: 123
       height: 113
     rotated: 0
@@ -87,13 +87,13 @@ MonoBehaviour:
     outer:
       serializedVersion: 2
       x: 0
-      y: 343
+      y: 342
       width: 254
       height: 169
     inner:
       serializedVersion: 2
       x: 8
-      y: 351
+      y: 350
       width: 238
       height: 153
     rotated: 0
@@ -104,14 +104,14 @@ MonoBehaviour:
   - name: Paper Background
     outer:
       serializedVersion: 2
-      x: 513
-      y: 767
+      x: 255
+      y: 255
       width: 257
       height: 257
     inner:
       serializedVersion: 2
-      x: 514
-      y: 768
+      x: 256
+      y: 256
       width: 255
       height: 255
     rotated: 0
@@ -122,14 +122,14 @@ MonoBehaviour:
   - name: Smooth
     outer:
       serializedVersion: 2
-      x: 868
-      y: 878
+      x: 236
+      y: 189
       width: 17
       height: 17
     inner:
       serializedVersion: 2
-      x: 872
-      y: 882
+      x: 240
+      y: 193
       width: 9
       height: 9
     rotated: 0
@@ -140,14 +140,14 @@ MonoBehaviour:
   - name: Glow
     outer:
       serializedVersion: 2
-      x: 868
-      y: 790
+      x: 217
+      y: 189
       width: 17
       height: 15
     inner:
       serializedVersion: 2
-      x: 872
-      y: 794
+      x: 221
+      y: 193
       width: 9
       height: 7
     rotated: 0
@@ -158,14 +158,14 @@ MonoBehaviour:
   - name: Dark
     outer:
       serializedVersion: 2
-      x: 868
-      y: 860
+      x: 234
+      y: 323
       width: 17
       height: 17
     inner:
       serializedVersion: 2
-      x: 873
-      y: 865
+      x: 239
+      y: 328
       width: 7
       height: 7
     rotated: 0
@@ -176,14 +176,14 @@ MonoBehaviour:
   - name: Flat Outline
     outer:
       serializedVersion: 2
-      x: 868
-      y: 842
+      x: 181
+      y: 323
       width: 17
       height: 17
     inner:
       serializedVersion: 2
-      x: 873
-      y: 847
+      x: 186
+      y: 328
       width: 7
       height: 7
     rotated: 0
@@ -194,14 +194,14 @@ MonoBehaviour:
   - name: Bright
     outer:
       serializedVersion: 2
-      x: 868
-      y: 824
+      x: 198
+      y: 323
       width: 17
       height: 17
     inner:
       serializedVersion: 2
-      x: 873
-      y: 829
+      x: 203
+      y: 328
       width: 7
       height: 7
     rotated: 0
@@ -212,14 +212,14 @@ MonoBehaviour:
   - name: Beveled Outline
     outer:
       serializedVersion: 2
-      x: 868
-      y: 806
+      x: 215
+      y: 323
       width: 17
       height: 17
     inner:
       serializedVersion: 2
-      x: 873
-      y: 811
+      x: 220
+      y: 328
       width: 7
       height: 7
     rotated: 0
@@ -230,14 +230,14 @@ MonoBehaviour:
   - name: Orc Armor - Boots
     outer:
       serializedVersion: 2
-      x: 771
-      y: 767
+      x: 256
+      y: 0
       width: 96
       height: 128
     inner:
       serializedVersion: 2
-      x: 771
-      y: 767
+      x: 256
+      y: 0
       width: 96
       height: 128
     rotated: 0
@@ -248,14 +248,14 @@ MonoBehaviour:
   - name: Fantasy Font
     outer:
       serializedVersion: 2
-      x: 513
-      y: 554
+      x: 0
+      y: 0
       width: 256
       height: 212
     inner:
       serializedVersion: 2
-      x: 513
-      y: 554
+      x: 0
+      y: 0
       width: 256
       height: 212
     rotated: 0
@@ -266,38 +266,20 @@ MonoBehaviour:
   - name: NGUI
     outer:
       serializedVersion: 2
-      x: 255
-      y: 436
+      x: 256
+      y: 178
       width: 255
       height: 76
     inner:
       serializedVersion: 2
-      x: 255
-      y: 436
+      x: 256
+      y: 178
       width: 255
       height: 76
     rotated: 0
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
-    paddingBottom: 0
-  - name: Fantasy Atlas
-    outer:
-      serializedVersion: 2
-      x: 0
-      y: 513
-      width: 512
-      height: 511
-    inner:
-      serializedVersion: 2
-      x: 0
-      y: 513
-      width: 512
-      height: 511
-    rotated: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: .00195694715
     paddingBottom: 0
   mCoordinates: 0
   mPixelSize: 1

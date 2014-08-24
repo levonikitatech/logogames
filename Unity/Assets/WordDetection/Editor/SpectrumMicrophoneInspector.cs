@@ -17,6 +17,8 @@ public class SpectrumMicrophoneInspector : Editor
 
         int captureTime = item.CaptureTime;
         int sampleRate = item.SampleRate;
+		float gateThreshold = item.gateThreshold;
+		bool gateOn = item.gateOn;
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Capture Time:");
@@ -37,6 +39,24 @@ public class SpectrumMicrophoneInspector : Editor
         item.SampleRate = Mathf.Min(item.SampleRate, 65536);
         item.SampleRate = Mathf.Max(item.SampleRate, 1024);
         GUILayout.EndHorizontal();
+
+		GUILayout.BeginHorizontal();
+		item.gateOn = EditorGUILayout.Toggle("Noise gate on:", item.gateOn);
+		GUILayout.EndHorizontal();
+
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Gate threshold:");
+		//item.gateThreshold = (float)GUILayout.HorizontalSlider(item.SampleRate, 0.2f, 20f);
+		item.gateThreshold = EditorGUILayout.FloatField(item.gateThreshold);
+		item.gateThreshold = Mathf.Min(item.gateThreshold, 20f);
+		item.gateThreshold = Mathf.Max(item.gateThreshold, 0.2f);
+		/*
+		log = (float)Mathf.Log(item.gateThreshold, 2);
+		item.gateThreshold = (float)Mathf.Pow(2, log);
+		item.gateThreshold = Mathf.Min(item.gateThreshold, 20f);
+		item.gateThreshold = Mathf.Max(item.gateThreshold, 0.2f);
+		*/
+		GUILayout.EndHorizontal();
 
         if (captureTime != item.CaptureTime ||
             sampleRate != item.SampleRate)
