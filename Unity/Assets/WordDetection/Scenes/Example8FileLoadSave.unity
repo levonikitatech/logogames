@@ -671,6 +671,8 @@ MonoBehaviour:
   hiPassFilter: 300
   loPassFilter: 3400
   SampleRate: 8192
+  gateThreshold: 1.20000005
+  gateOn: 1
   DeviceName: 
 --- !u!114 &1748221584
 MonoBehaviour:

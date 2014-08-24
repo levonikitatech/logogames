@@ -25,8 +25,8 @@ public class SpectrumMicrophone : MonoBehaviour
     /// </summary>
     public int SampleRate = 8192;
 
-	private float gateThreshold = 1f;
-	private bool gateOn = true;
+	public float gateThreshold = 1f;
+	public bool gateOn = true;
 	/// <summary>
     /// Make sure InitData is called if sample rate or capture time is changed
     /// </summary>
@@ -133,8 +133,12 @@ public class SpectrumMicrophone : MonoBehaviour
 				{
 					GetSpectrumData(FFTWindow.Rectangular, out SpectrumReal, out SpectrumImag);
 					maxAmplitude = -10f;
+					for (int i=0; i<SpectrumImag.Length; i++)
+						maxAmplitude = Mathf.Abs(SpectrumImag[i]) > maxAmplitude ? Mathf.Abs(SpectrumImag[i]) : maxAmplitude;
+					/*
 					for (int i=0; i<SpectrumReal.Length; i++)
 						maxAmplitude = Mathf.Abs(SpectrumReal[i]) > maxAmplitude ? Mathf.Abs(SpectrumReal[i]) : maxAmplitude;
+					*/
 					Debug.Log(maxAmplitude);
 					if (maxAmplitude <= gateThreshold)
 					{
